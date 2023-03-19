@@ -141,8 +141,8 @@ export class CameraControls extends EventDispatcher {
 	}
 
 	/**
-	 * Minimum vertical angle in radians.  
-	 * The angle has to be between `0` and `.maxPolarAngle` inclusive.  
+	 * Minimum vertical angle in radians.
+	 * The angle has to be between `0` and `.maxPolarAngle` inclusive.
 	 * The default value is `0`.
 	 *
 	 * e.g.
@@ -154,8 +154,8 @@ export class CameraControls extends EventDispatcher {
 	minPolarAngle = 0; // radians
 
 	/**
-	 * Maximum vertical angle in radians.  
-	 * The angle has to be between `.maxPolarAngle` and `Math.PI` inclusive.  
+	 * Maximum vertical angle in radians.
+	 * The angle has to be between `.maxPolarAngle` and `Math.PI` inclusive.
 	 * The default value is `Math.PI`.
 	 *
 	 * e.g.
@@ -167,8 +167,8 @@ export class CameraControls extends EventDispatcher {
 	maxPolarAngle = Math.PI; // radians
 
 	/**
-	 * Minimum horizontal angle in radians.  
-	 * The angle has to be less than `.maxAzimuthAngle`.  
+	 * Minimum horizontal angle in radians.
+	 * The angle has to be less than `.maxAzimuthAngle`.
 	 * The default value is `- Infinity`.
 	 *
 	 * e.g.
@@ -180,8 +180,8 @@ export class CameraControls extends EventDispatcher {
 	minAzimuthAngle = - Infinity; // radians
 
 	/**
-	 * Maximum horizontal angle in radians.  
-	 * The angle has to be greater than `.minAzimuthAngle`.  
+	 * Maximum horizontal angle in radians.
+	 * The angle has to be greater than `.minAzimuthAngle`.
 	 * The default value is `Infinity`.
 	 *
 	 * e.g.
@@ -194,19 +194,19 @@ export class CameraControls extends EventDispatcher {
 
 	// How far you can dolly in and out ( PerspectiveCamera only )
 	/**
-	 * Minimum distance for dolly. The value must be higher than `0`.  
+	 * Minimum distance for dolly. The value must be higher than `0`.
 	 * PerspectiveCamera only.
 	 * @category Properties
 	 */
 	minDistance = 0;
 	/**
-	 * Maximum distance for dolly. The value must be higher than `minDistance`.  
+	 * Maximum distance for dolly. The value must be higher than `minDistance`.
 	 * PerspectiveCamera only.
 	 * @category Properties
 	 */
 	maxDistance = Infinity;
 	/**
-	 * `true` to enable Infinity Dolly.  
+	 * `true` to enable Infinity Dolly.
 	 * When the Dolly distance is less than the `minDistance`, radius of the sphere will be set `minDistance` automatically.
 	 * @category Properties
 	 */
@@ -289,7 +289,7 @@ export class CameraControls extends EventDispatcher {
 	restThreshold = 0.01;
 
 	/**
-	 * An array of Meshes to collide with camera.  
+	 * An array of Meshes to collide with camera.
 	 * Be aware colliderMeshes may decrease performance. The collision test uses 4 raycasters from the camera since the near plane has 4 corners.
 	 * @category Properties
 	 */
@@ -1195,7 +1195,7 @@ export class CameraControls extends EventDispatcher {
 	}
 
 	/**
-	 * Whether or not the controls are enabled.  
+	 * Whether or not the controls are enabled.
 	 * `false` to disable user dragging/touch-move, but all methods works.
 	 * @category Properties
 	 */
@@ -1228,7 +1228,7 @@ export class CameraControls extends EventDispatcher {
 	}
 
 	/**
-	 * Returns `true` if the controls are active updating.  
+	 * Returns `true` if the controls are active updating.
 	 * readonly value.
 	 * @category Properties
 	 */
@@ -1239,7 +1239,7 @@ export class CameraControls extends EventDispatcher {
 	}
 
 	/**
-	 * Getter for the current `ACTION`.  
+	 * Getter for the current `ACTION`.
 	 * readonly value.
 	 * @category Properties
 	 */
@@ -1274,7 +1274,7 @@ export class CameraControls extends EventDispatcher {
 
 	// horizontal angle
 	/**
-	 * get/set the azimuth angle (horizontal) in radians.  
+	 * get/set the azimuth angle (horizontal) in radians.
 	 * Every 360 degrees turn is added to `.azimuthAngle` value, which is accumulative.
 	 * @category Properties
 	 */
@@ -1452,7 +1452,7 @@ export class CameraControls extends EventDispatcher {
 	}
 
 	/**
-	 * Rotate azimuthal angle(horizontal) and polar angle(vertical) to the given angle.  
+	 * Rotate azimuthal angle(horizontal) and polar angle(vertical) to the given angle.
 	 * Camera view will rotate over the orbit pivot absolutely:
 	 *
 	 * azimuthAngle
@@ -1534,7 +1534,7 @@ export class CameraControls extends EventDispatcher {
 	 * @param enableTransition Whether to move smoothly or immediately.
 	 * @category Methods
 	 */
-	dollyTo( distance: number, enableTransition: boolean = false ): Promise<void> {
+	dollyTo( distance: number, enableTransition: boolean = true ): Promise<void> {
 
 		this._isUserControllingDolly = false;
 
@@ -2300,7 +2300,7 @@ export class CameraControls extends EventDispatcher {
 	}
 
 	/**
-	 * Sync camera-up direction.  
+	 * Sync camera-up direction.
 	 * When camera-up vector is changed, `.updateCameraUp()` must be called.
 	 * @category Methods
 	 */
@@ -2312,7 +2312,7 @@ export class CameraControls extends EventDispatcher {
 	}
 
 	/**
-	 * Update camera position and directions.  
+	 * Update camera position and directions.
 	 * This should be called in your tick loop every time, and returns true if re-rendering is needed.
 	 * @param delta
 	 * @returns updated
